@@ -3,8 +3,8 @@ library (stringi)
 library(selectr)
 
 login_linkedin <- function() {
-  username <- ""
-  password <- ""
+  username <- "shekhar2010us@gmail.com"
+  password <- "07_Sept1983"
   linkedin_url <- "http://linkedin.com/"
   
   pgsession <- html_session(linkedin_url) 
@@ -46,8 +46,8 @@ scrape_linkedin <- function(pgsession, user_url) {
   ) 
 }
 
-input_file = "/Users/sagraw200/Documents/dev/team-personal/r_projects/scrapper/resources/ids/ids.txt"
-output_folder = "/Users/sagraw200/Documents/dev/team-personal/r_projects/scrapper/resources/data_fields/"
+input_file = "/Users/sagraw200/Documents/dev/team-personal/headhunt/src/resources/data/ingest/resume/user.data.small"
+output_folder = "/Users/sagraw200/Documents/dev/team-personal/headhunt/src/resources/data/ingest/resume/r_parsed_files/data_fields/"
 
 list <- read.delim(input_file, header=FALSE, stringsAsFactors=FALSE)
 names(list)<-c("urls")
