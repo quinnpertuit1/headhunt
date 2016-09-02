@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "a=1001\nb=1011\n\nwhile [ $a -lt 2000 ]\ndo\n   echo $a  \"  \"  $b\n   Rscript LinkedinResumeParallel.R $a $b &\n   if [ $a -eq 2000 ]\n   then\n      break\n   fi\n   a=`expr $a + 10`\n   b=`expr $b + 10`\ndone\n",
+    "created" : 1472766866451.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2534338751",
+    "id" : "173F1E6B",
+    "lastKnownWriteTime" : 1472767485,
+    "last_content_update" : 1472767485,
+    "path" : "~/Documents/dev/team-personal/r_projects/scrapper/src/callT1.sh",
+    "project_path" : "src/callT1.sh",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "sh"
+}

@@ -1,0 +1,24 @@
+$name
+[1] "SHEILA LINGARD"
+
+$location
+character(0)
+
+$num_connections
+[1] "7"
+
+$experience
+[1] "ExperiencePRACTICE MANAGEREnglish Heritage$(function(){if(LI.Dialog){LI.Dialog().submitEvent.subscribe(function(type,args){var positionID;if(args[1]=='removePositionDialog'&&WebTracking&&WebTracking.trackUserAction){if(args[2]&&args[2].positionID){positionID=args[2].positionID;}WebTracking.trackUserAction('nprofile-edit-position-remove-submit',{positionID:positionID});}});}});"
+
+$education
+[1] "EducationChadderton Grammar School for GirlsFreehold Junior School, Oldhamif(LI.Dialog){LI.Dialog().submitEvent.subscribe(function(type,args){var educationID;if(args[1]=='removeEducationDialog'&&WebTracking&&WebTracking.trackUserAction){if(args[2]&&args[2].educationID){educationID=args[2].educationID;}WebTracking.trackUserAction('nprofile-edit-education-remove-submit',{educationID:educationID});}});}"
+
+$recommendations
+character(0)
+
+$summary
+character(0)
+
+$skills
+NULL
+

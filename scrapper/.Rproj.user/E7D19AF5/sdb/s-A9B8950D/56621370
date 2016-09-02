@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library (rvest)\nlibrary (stringi)\nlibrary(selectr)\n\nlogin_linkedin <- function() {\n  username <- \"shekhar2010us@gmail.com\"\n  password <- \"07_Sept1983\"\n  linkedin_url <- \"http://linkedin.com/\"\n  \n  pgsession <- html_session(linkedin_url) \n  pgform <- html_form(pgsession)[[1]]\n  filled_form <- set_values(pgform, session_key = username,  session_password = password)\n  submit_form(pgsession, filled_form)\n  return (pgsession)\n}\nscrape_linkedin <- function(pgsession, user_url) {\n  pgsession <- jump_to(pgsession, user_url)\n  page_html <- read_html(pgsession)\n  \n  name <- page_html %>% html_nodes(\"#name\") %>% html_text()\n  location <- page_html %>% html_nodes(\"#recommendations\") %>% html_text()\n  num_connections <- page_html %>% html_nodes(\".member-connections strong\") %>% html_text()\n  experience <- page_html %>% html_nodes(\"#background-experience\") %>% html_text()\n  education <- page_html %>% html_nodes(\"#background-education\") %>% html_text()\n  recommendations <- page_html %>% html_nodes(\"#endorsements\") %>% html_text()\n  summary <- page_html %>% html_nodes(\"#summary-item-view\") %>% html_text()\n  skills_nodes <- page_html %>% html_nodes(\"#profile-skills .skill-pill\")\n  skills <-\n    lapply(skills_nodes, function(node) {\n      num <- node %>% html_nodes(\".num-endorsements\") %>% html_text()\n      name <- node %>% html_nodes(\".endorse-item-name-text\") %>% html_text()\n      data.frame(name = name, num = num)\n    })\n  \n  skills <- do.call(rbind, skills)\n  \n  list(\n    name = name,\n    location = location,\n    num_connections = num_connections,\n    experience = experience,\n    education = education,\n    recommendations = recommendations,\n    summary = summary,\n    skills = skills\n  ) \n}\n\ninput_file = \"/Users/sagraw200/Documents/dev/team-personal/r_projects/scrapper/resources/ids/ids.txt\"\noutput_folder = \"/Users/sagraw200/Documents/dev/team-personal/r_projects/scrapper/resources/data_fields/\"\n\nlist <- read.delim(input_file, header=FALSE, stringsAsFactors=FALSE)\nnames(list)<-c(\"urls\")\n\npgsession = login_linkedin()\n\nfor(i in seq(nrow(list))) {\n  print(list$urls[i])\n  filename <- paste0(output_folder, stri_sub(list$urls[i],from = 29, to = -1) , \".txt\")\n  print(filename)\n  text <- scrape_linkedin(pgsession, list$urls[i])\n  # write.csv(data.frame(text), filename)\n  sink(file = paste(filename)) # open file to write\n  print(text)\n  sink() # close the file\n  \n}\n",
+    "created" : 1472764352756.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "4|30|14|0|\n15|50|46|0|\n",
+    "hash" : "1568856409",
+    "id" : "56621370",
+    "lastKnownWriteTime" : 1472765741,
+    "last_content_update" : 1472765743873,
+    "path" : "~/Documents/dev/team-personal/r_projects/scrapper/src/LinkedinResume.R",
+    "project_path" : "src/LinkedinResume.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

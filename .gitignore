@@ -1,0 +1,22 @@
+## intellij
+*.iml
+.idea/
+.idea/workspace.xml
+*.ipr
+*.iws
+target/
+project/
+jd.data
+
+jd.data.parsed
+jd.data.raw
+jdurl.data.raw
+
+src/resources/data/ingest/jd/jd.data.parsed
+src/resources/data/ingest/jd/jd.data.raw
+src/resources/data/ingest/jd/jdurl.data.raw
+
+## vim
+*.swp
+*.swo
+

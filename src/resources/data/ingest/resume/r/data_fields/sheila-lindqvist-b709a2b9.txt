@@ -1,0 +1,33 @@
+$name
+[1] "SHEILA LINDQVIST"
+
+$location
+character(0)
+
+$num_connections
+[1] "9"
+
+$experience
+character(0)
+
+$education
+[1] "EducationUppsala University2009 <U+2013> 2016Stockholm UniversityInformation Technologyif(LI.Dialog){LI.Dialog().submitEvent.subscribe(function(type,args){var educationID;if(args[1]=='removeEducationDialog'&&WebTracking&&WebTracking.trackUserAction){if(args[2]&&args[2].educationID){educationID=args[2].educationID;}WebTracking.trackUserAction('nprofile-edit-education-remove-submit',{educationID:educationID});}});}"
+
+$recommendations
+character(0)
+
+$summary
+character(0)
+
+$skills
+                name num
+1   Customer Service   1
+2    Microsoft Excel   1
+3     Microsoft Word   1
+4         PowerPoint   1
+5 Strategic Planning   1
+6   Microsoft Office   0
+7         Management   0
+8 Project Management   0
+9         Leadership   0
+

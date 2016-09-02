@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library (rvest)\nlibrary (stringi)\nlibrary (selectr)\n\nlogin_linkedin <- function() {\n  username <- \"shekhar2010us@gmail.com\"\n  password <- \"07_Sept1983\"\n  linkedin_url <- \"http://linkedin.com/\"\n  \n  pgsession <- html_session(linkedin_url) \n  pgform <- html_form(pgsession)[[1]]\n  filled_form <- set_values(pgform, session_key = username,  session_password = password)\n  submit_form(pgsession, filled_form)\n  return (pgsession)\n}\nscrape_linkedin <- function(pgsession, user_url) {\n  pgsession <- jump_to(pgsession, user_url)\n  page_html <- read_html(pgsession)\n  return (page_html)\n}\n\nargs <- commandArgs(TRUE)\nstart <- args[1]\nend <- args[2]\n\ninput_file = \"/Users/sagraw200/Documents/dev/team-personal/r_projects/scrapper/resources/ids/user.data\"\noutput_folder = \"/Users/sagraw200/Documents/dev/team-personal/r_projects/scrapper/resources/data_html/\"\n\nlist <- read.delim(input_file, header=FALSE, stringsAsFactors=FALSE)\n\nstart <- as.integer(start)\nend <- as.integer(end)\nsublist <- as.data.frame(list$V1[start:end],stringsAsFactors =FALSE)\nnames(sublist)<-c(\"urls\")\n\npgsession = login_linkedin()\n\nfor(i in seq(nrow(sublist))) {\n  callthis <- sublist$urls[i]\n  text <- scrape_linkedin(pgsession, callthis)\n  filename <- paste0(output_folder, stri_sub(callthis , from = 29, to = -1) , \".txt\")\n  write.csv(toString(text), file=filename)\n}\n\n\n\n\n",
+    "created" : 1472765677255.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "4|30|14|0|\n15|50|19|0|\n",
+    "hash" : "2980417188",
+    "id" : "D7BF435D",
+    "lastKnownWriteTime" : 1472766858,
+    "last_content_update" : 1472766859820,
+    "path" : "~/Documents/dev/team-personal/r_projects/scrapper/src/LinkedinResumeParallel.R",
+    "project_path" : "src/LinkedinResumeParallel.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

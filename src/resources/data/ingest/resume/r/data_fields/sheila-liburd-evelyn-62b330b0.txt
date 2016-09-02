@@ -1,0 +1,24 @@
+$name
+[1] "SHEILA LIBURD EVELYN"
+
+$location
+character(0)
+
+$num_connections
+[1] "3"
+
+$experience
+character(0)
+
+$education
+character(0)
+
+$recommendations
+character(0)
+
+$summary
+character(0)
+
+$skills
+NULL
+

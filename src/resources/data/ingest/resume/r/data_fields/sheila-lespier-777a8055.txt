@@ -1,0 +1,55 @@
+$name
+[1] "SHEILA LESPIER"
+
+$location
+character(0)
+
+$num_connections
+[1] "500+"
+
+$experience
+[1] "ExperienceAssistant ManagerEZCORPJuly 2016 <U+2013> Present (3 months)Orlando, FloridaSALES & LENDING EXECUTIVEEZ CORP..October 2004 <U+2013> Present (12 years)$(function(){if(LI.Dialog){LI.Dialog().submitEvent.subscribe(function(type,args){var positionID;if(args[1]=='removePositionDialog'&&WebTracking&&WebTracking.trackUserAction){if(args[2]&&args[2].positionID){positionID=args[2].positionID;}WebTracking.trackUserAction('nprofile-edit-position-remove-submit',{positionID:positionID});}});}});"
+
+$education
+[1] "EducationVINELAND SENIOR HIGH1986 <U+2013> 1989if(LI.Dialog){LI.Dialog().submitEvent.subscribe(function(type,args){var educationID;if(args[1]=='removeEducationDialog'&&WebTracking&&WebTracking.trackUserAction){if(args[2]&&args[2].educationID){educationID=args[2].educationID;}WebTracking.trackUserAction('nprofile-edit-education-remove-submit',{educationID:educationID});}});}"
+
+$recommendations
+character(0)
+
+$summary
+character(0)
+
+$skills
+                    name num
+1       Customer Service 99+
+2          Team Building 99+
+3                  Sales 99+
+4       Sales Management 99+
+5             Leadership  81
+6     Strategic Planning  75
+7                 Retail  71
+8   Inventory Management  63
+9             Management  55
+10               Budgets  52
+11             Marketing  48
+12 Operations Management  45
+13      Microsoft Office  43
+14        Microsoft Word  37
+15              Coaching  33
+16            PowerPoint  31
+17    Project Management  20
+18 Customer Satisfaction  18
+19       Team Leadership  16
+20              Training  16
+21           Negotiation  13
+22         Merchandising  12
+23       Time Management  11
+24    Marketing Strategy  11
+25                Profit   9
+26             Budgeting   9
+27  Business Development   6
+28  Doing More with Less   5
+29           Forecasting   4
+30       Microsoft Excel   4
+31     Employee Training   4
+
