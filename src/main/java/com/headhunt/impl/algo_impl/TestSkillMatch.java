@@ -12,6 +12,7 @@ import java.util.*;
 public class TestSkillMatch {
 
     private static final String skillsMaster = "src/resources/data/ingest/skill/skill_master.txt";
+    private static final String impSkills = "src/resources/data/ingest/skill/imp_skill.txt";
     private static final String jdSmall = "src/resources/data/ingest/jd/jd.data.parsed.small";
     private static UtilitiesFile utilitiesFile;
     private static SkillsMatch skillsMatch;
@@ -24,7 +25,7 @@ public class TestSkillMatch {
         skillsMatch = new SkillsMatch(allSkills);
         TreeMap<String, Integer> skillMap = new TreeMap<>();
         int N = 0;
-        for (int i = 1000; i < 1800; ++i) {
+        for (int i = 0; i < allJds.size(); ++i) {
             N++;
             if (N % 100 == 0) {
                 System.out.println(N);
@@ -41,9 +42,11 @@ public class TestSkillMatch {
 
         LinkedHashMap<String, Integer> sortedMap = (LinkedHashMap) UtilitiesCollection.sortByValue(skillMap);
         System.out.println(sortedMap.size());
+        StringBuilder builder = new StringBuilder();
         for (String ski : sortedMap.keySet()) {
-            System.out.println(ski + " ==> " + sortedMap.get(ski));
+            builder.append(ski + " ==> " + sortedMap.get(ski));
         }
+        utilitiesFile.writeToFile(impSkills, builder.toString());
     }
 
 }
