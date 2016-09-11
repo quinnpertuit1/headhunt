@@ -7,16 +7,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import javax.net.ssl.HttpsURLConnection;
-import javax.swing.text.Utilities;
 import java.io.*;
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
@@ -49,9 +46,24 @@ public class LinkedinUserDatabase {
         // Login to linked
         login(http);
 
-        // get user database
-        userDbParser(http);
+//        // get user database
+//        userDbParser(http);
 
+        // read resume
+//        readResume(http);
+
+    }
+
+    private static void readResume(LinkedinUserDatabase http) {
+        String uurl = "https://www.linkedin.com/in/danielkrizian";
+
+        try {
+//            String res1 = http.GetPageContent(uurl);
+            String res2 = http.GetPageContentGzipped(uurl);
+            System.out.println("");
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
     private static void userDbParser(LinkedinUserDatabase http) {
@@ -134,6 +146,8 @@ public class LinkedinUserDatabase {
             System.err.println("Error in loggin to linkedin: "+ ex);
         }
     }
+
+
 
     private void sendPost(String url, String postParams) throws Exception {
 
