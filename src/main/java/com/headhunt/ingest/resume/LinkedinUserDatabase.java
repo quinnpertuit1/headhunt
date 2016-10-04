@@ -24,8 +24,8 @@ import java.util.zip.GZIPInputStream;
 public class LinkedinUserDatabase {
 
     private static String loginurl = "https://www.linkedin.com/uas/login?fromSignIn=true&trk=uno-reg-guest-home";
-    private static String uId = "shekhar2010us@gmail.com";
-    private static String passW = "07_Sept1983";
+    private static String uId = "<linkedin_user_id>";
+    private static String passW = "<linkedin_password>";
 
     private static final String outputFile = "src/main/java/com/headhunt/ingest/resume/user.data";
     private static final String outputUrlFile = "src/main/java/com/headhunt/ingest/resume/userurl.data";
@@ -50,12 +50,12 @@ public class LinkedinUserDatabase {
 //        userDbParser(http);
 
         // read resume
-//        readResume(http);
+        readResume(http);
 
     }
 
     private static void readResume(LinkedinUserDatabase http) {
-        String uurl = "https://www.linkedin.com/in/danielkrizian";
+        String uurl = "https://www.linkedin.com/in/aditya-prakash-6b234410";
 
         try {
 //            String res1 = http.GetPageContent(uurl);

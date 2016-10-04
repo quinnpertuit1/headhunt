@@ -61,7 +61,7 @@ public class IndeedJdHtml {
         for ( String skill : skills ) {
             whats.add(URLEncoder.encode(skill));
         }
-        whats = whats.subList(101, 200);
+        whats = whats.subList(201, 210);
         System.out.println("whats size: " + whats.size());
 
         String[] wheres = {"Philadelphia%2C+PA",
